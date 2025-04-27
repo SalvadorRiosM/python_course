@@ -1,17 +1,12 @@
-def announce(function_inside):                #    (anuncio)
-    def wrapper():              #    (envoltura)
+def announce(interior):                # (anuncio) la funcion decoradora toma como parametro la funcion interior
+    def wrapper():                     # (envoltura)
         print("About to run the function...")
-        function_inside()                    
-        print("Done with the function.")
+        interior()                    
+        print("Done function.")
     return wrapper
-
-@announce
-def hello():
-    print("Hello, World!")
 
 @announce    
 def name():
     print("My name is Orlandito")
     
-hello()
 name()
